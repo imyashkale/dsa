@@ -21,7 +21,7 @@ func (a *Array) With(arr []int) *Array {
 }
 
 // LinearSearch
-func (a Array) LinearSearch(target int) (int){
+func (a Array) LinearSearch(target int) int {
 	for i := 0; i < a.Len(); i++ {
 		if target == a.elements[i] {
 			return i
@@ -37,20 +37,20 @@ func (a Array) Len() int {
 
 // Largest Find the largest Number in array/ Maximum No
 func (a Array) Largest() int {
-	largest := int(math.Inf(-1))
-	for i := 0; i < a.Len(); i ++ {
+	largest := math.MinInt
+	for i := 0; i < a.Len(); i++ {
 		if largest < a.elements[i] {
 			largest = a.elements[i]
-		} 
+		}
 	}
 	return largest
 }
 
 // Lowest Find the lowest Element in the array
 func (a Array) Lowest() int {
-	lowest := int(math.Inf(1))
-	for i := 0; i < a.Len(); i ++ {
-		if lowest > a.elements[i] {
+	lowest := math.MaxInt
+	for i := 0; i < a.Len(); i++ {
+		if a.elements[i] < lowest {
 			lowest = a.elements[i]
 		}
 	}
