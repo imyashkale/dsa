@@ -20,5 +20,8 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v4.1.1
 
+    - name: Cleaning Test Cache
+      run: go clean -testcache
+
     - name: Run Tests
       run: go test ./...
