@@ -39,7 +39,7 @@ func (a Array) Len() int {
 func (a Array) Largest() int {
 	largest := math.MinInt
 	for i := 0; i < a.Len(); i++ {
-		if largest < a.elements[i] {
+		if a.elements[i] > largest {
 			largest = a.elements[i]
 		}
 	}
